@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="404 - Page Not Found" />
+        <meta name="author" content="David Entonu" />
+        <title>404 - Page Not Found</title>
+        <!-- Favicon-->        
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <!-- Custom Google font-->        
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->        
+        <link href="styles.css" rel="stylesheet" />
+        <style>
+          .error-container { text-align: center; padding: 100px 20px; }
+          .error-container h1 { font-size: 6rem; margin-bottom: 0; }
+          .error-container p { font-size: 1.25rem; margin-bottom: 1.5rem; }
+          #game-section { text-align: center; margin-top: 60px; }
+          #game-launcher { padding: 20px 40px; font-size: 1.25rem; cursor: pointer; }
+          #gameCanvas { display: block; margin: 20px auto; border: 2px solid #333; background: #fff; max-width: 100%; width: 100%; height: auto; }
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->        
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Start</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="hobby.html">Hobbies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- 404 Error Content -->
+            <div class="container error-container">
+                <h1>404 Error</h1>
+                <p>Oops! The page you are looking for cannot be found.</p>
+                <a href="index.html" class="btn btn-primary btn-lg">Return Home</a>
+            </div>
+
+            <!-- Runner Game Section -->
+            <div class="container px-5" id="game-section">
+                <div id="game-launcher" class="card shadow border-0 bg-white">
+                    Click here to play a runner game!
+                </div>
+                <canvas id="gameCanvas" width="600" height="300" style="display:none;"></canvas>
+            </div>
+        </main>
+
+        <!-- Footer-->        
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; David Entonu</div></div>
+                    <div class="col-auto">
+                        <div class="d-flex fs-2 gap-4">
+                            <a class="text-gradient" href="https://www.linkedin.com/in/david-e-218683129" target="_blank">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a class="text-gradient" href="https://github.com/chaos-hunter" target="_blank">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Runner Game Script -->
+        <script>
+          (function() {
+            const launcher = document.getElementById('game-launcher');
+            const canvas = document.getElementById('gameCanvas');
+            let inited = false;
+            launcher.addEventListener('click', () => {
+              if (inited) return;
+              launcher.style.display = 'none';
+              canvas.style.display = 'block';
+              initGame();
+              inited = true;
+            });
+
+            function initGame() {
+              const ctx = canvas.getContext('2d');
+              const width = canvas.width;
+              const height = canvas.height;
+              const gravity = 0.6;
+              const jumpStrength = -12;
+              let gameOver = false;
+              let score = 0;
+              let obstacleSpeed = -6;
+
+              const player = {
+                x: 50,
+                y: height - 15,
+                radius: 15,
+                vy: 0,
+                jump() { if (this.y >= height - this.radius) this.vy = jumpStrength; },
+                update() { this.vy += gravity; this.y += this.vy; if (this.y > height - this.radius) { this.y = height - this.radius; this.vy = 0; } },
+                draw() { ctx.fillStyle = '#333'; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill(); }
+              };
+
+              class Obstacle {
+                constructor() {
+                  this.width = 20 + Math.random() * 30;
+                  this.height = 20 + Math.random() * 50;
+                  this.x = width;
+                  this.y = height - this.height;
+                  this.vx = obstacleSpeed;
+                }
+                update() { this.x += this.vx; }
+                draw() { ctx.fillStyle = '#900'; ctx.fillRect(this.x, this.y, this.width, this.height); }
+              }
+
+              const obstacles = [];
+              let timer = 0;
+
+              function restart() {
+                obstacles.length = 0;
+                score = 0;
+                gameOver = false;
+                obstacleSpeed = -6;
+                player.y = height - player.radius;
+                player.vy = 0;
+              }
+
+              function update() {
+                if (gameOver) return;
+                player.update();
+                if (score >= 100 && obstacleSpeed > -18) obstacleSpeed = -18;
+                else if (score >= 75 && obstacleSpeed > -12) obstacleSpeed = -12;
+                else if (score >= 25 && obstacleSpeed > -10) obstacleSpeed = -10;
+                timer++;
+                if (timer > 90) { obstacles.push(new Obstacle()); timer = 0; }
+                obstacles.forEach((o, i) => {
+                  o.vx = obstacleSpeed;
+                  o.update();
+                  if (o.x + o.width < 0) { obstacles.splice(i, 1); score++; }
+                  if (player.x + player.radius > o.x &&
+                      player.x - player.radius < o.x + o.width &&
+                      player.y + player.radius > o.y &&
+                      player.y - player.radius < o.y + o.height) { gameOver = true; }
+                });
+              }
+
+              function draw() {
+                ctx.clearRect(0, 0, width, height);
+                player.draw();
+                obstacles.forEach(o => o.draw());
+                ctx.fillStyle = '#000';
+                ctx.font = '20px sans-serif';
+                ctx.fillText('Score: ' + score, 10, 30);
+                if (gameOver) { ctx.font = '24px sans-serif'; ctx.fillText('Game Over - Click to Restart', 50, height / 2); }
+              }
+
+              function loop() { update(); draw(); requestAnimationFrame(loop); }
+              loop();
+
+              window.addEventListener('keydown', e => {
+                if (!gameOver && e.code === 'Space') player.jump();
+                if (gameOver && e.code === 'Space') restart();
+              });
+              canvas.addEventListener('click', () => { if (gameOver) restart(); });
+              canvas.addEventListener('pointerdown', e => { e.preventDefault(); if (!gameOver) { player.jump(); } else { restart(); } });
+            }
+          })();
+        </script>
+    </body>
+</html>
