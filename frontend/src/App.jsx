@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import CircularGallery from './CircularGallery';
-import TextType from './TextType';
-import LogoLoop from './LogoLoop';
+import { useState, useEffect } from "react";
+import CircularGallery from "./CircularGallery";
+import TextType from "./TextType";
+import LogoLoop from "./LogoLoop";
+
 const NAV_LINKS = ["Home", "Resume", "Projects", "Contact", "Hobbies"];
 
 const styles = `
@@ -9,17 +10,77 @@ const styles = `
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* ===== Smooth Theme Animation Support ===== */
+  @property --accent {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #7c6cff;
+  }
+  @property --accent2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ff6c9d;
+  }
+  @property --accent3 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #6cffda;
+  }
+
   :root {
     --bg: #0a0a0f;
     --bg2: #111118;
     --card: #16161f;
     --border: #2a2a3a;
+
+    /* start */
     --accent: #7c6cff;
     --accent2: #ff6c9d;
     --accent3: #6cffda;
+
     --text: #e8e8f0;
     --muted: #888899;
     --white: #ffffff;
+
+    /* 4 themes × 60 seconds each = 240 seconds total */
+    animation: themeSmooth 240s linear infinite;
+  }
+
+  @keyframes themeSmooth {
+    /* Purple */
+    0% {
+      --accent: #7c6cff;
+      --accent2: #ff6c9d;
+      --accent3: #6cffda;
+    }
+    /* Blue */
+    25% {
+      --accent: #4aa3ff;
+      --accent2: #59d6ff;
+      --accent3: #7c6cff;
+    }
+    /* Green */
+    50% {
+      --accent: #3cff7a;
+      --accent2: #6cffda;
+      --accent3: #4aa3ff;
+    }
+    /* Orange */
+    75% {
+      --accent: #ff8a3d;
+      --accent2: #ffd24a;
+      --accent3: #ff6c9d;
+    }
+    /* Back to Purple */
+    100% {
+      --accent: #7c6cff;
+      --accent2: #ff6c9d;
+      --accent3: #6cffda;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root { animation: none; }
   }
 
   html { scroll-behavior: smooth; }
@@ -51,9 +112,7 @@ const styles = `
     letter-spacing: 0.04em;
   }
   .pf-nav-links button:hover, .pf-nav-links button.active { color: var(--white); }
-  .pf-nav-links button.active {
-    color: var(--accent);
-  }
+  .pf-nav-links button.active { color: var(--accent); }
 
   /* SECTIONS */
   .pf-section { padding: 7rem 3rem 4rem; max-width: 1100px; margin: 0 auto; }
@@ -95,7 +154,11 @@ const styles = `
     display: flex; align-items: center; justify-content: center;
     font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800;
     color: white; margin: 0 auto 2rem;
+
+    /* Fallback + smooth glow */
     box-shadow: 0 0 60px rgba(124,108,255,0.4);
+    box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 40%, transparent);
+
     animation: float 4s ease-in-out infinite;
   }
   @keyframes float {
@@ -234,9 +297,7 @@ const styles = `
   }
 
   /* HOBBIES */
-  .photo-grid {
-    columns: 3; gap: 1rem;
-  }
+  .photo-grid { columns: 3; gap: 1rem; }
   @media (max-width: 768px) { .photo-grid { columns: 2; } }
   @media (max-width: 480px) { .photo-grid { columns: 1; } }
   .photo-card {
@@ -434,7 +495,7 @@ function ResumeSection() {
       <h2 className="section-title"><span className="grad-text">Resume</span></h2>
 
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "2rem" }}>
-        <a className="pf-btn pf-btn-primary" href="Resume.pdf" target="_blank" rel="noreferrer">
+        <a className="pf-btn pf-btn-primary" href="/Resume.pdf" target="_blank" rel="noreferrer">
           ⬇ View Full Resume
         </a>
       </div>
@@ -725,7 +786,7 @@ function PSNStats() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const base = 'https://portfolio-m7go.onrender.com/api/psn';
+    const base = 'https://portfolio-aqeg.onrender.com/api/psn';
     Promise.all([
       fetch(`${base}/profile`).then(r => r.json()),
       fetch(`${base}/trophies`).then(r => r.json()),
