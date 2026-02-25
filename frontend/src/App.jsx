@@ -725,7 +725,7 @@ function PSNStats() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const base = 'https://portfolio-aqeg.onrender.com/api/psn';
+    const base = 'https://portfolio-m7go.onrender.com/api/psn';
     Promise.all([
       fetch(`${base}/profile`).then(r => r.json()),
       fetch(`${base}/trophies`).then(r => r.json()),
