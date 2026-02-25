@@ -12,7 +12,12 @@ const {
 
 const app = express();
 app.use(cors({
-  origin: ['https://davidentonu.site', 'https://www.davidentonu.site', 'http://localhost:5173', 'https://portfolio-m7go.vercel.app']
+  origin: [
+    "https://davidentonu.site",
+    "https://www.davidentonu.site",
+    "http://localhost:5173",
+    /^https:\/\/.*\.vercel\.app$/
+  ]
 }));
 app.use(express.json());
 
