@@ -335,13 +335,29 @@ const styles = `
   @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
   @media (max-width: 768px) {
-    .pf-nav { padding: 1rem 1.5rem; }
-    .pf-nav-links { gap: 1rem; }
-    .pf-nav-links button { font-size: 0.8rem; }
-    .pf-section { padding: 6rem 1.5rem 3rem; }
-    .home-hero { padding: 6rem 1.5rem 3rem; }
-    .card-header { flex-direction: column; }
-    .card-badge { min-width: unset; width: 100%; }
+    .pf-nav {
+      gap: 1rem;
+    }
+
+    .pf-nav-links {
+      flex: 1;
+      justify-content: flex-end;
+      gap: 1.2rem;  /* reduce spacing */
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .pf-nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pf-nav-links button {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      padding: 0.4rem 0.25rem;
+    }
   }
 `;
 
@@ -461,7 +477,7 @@ function HomeSection() {
           Hello, I'm <span className="grad-text">David Entonu</span>
         </h1>
         <p className="hero-sub">Aspiring Developer & Tech Lover</p>
-        <p className="hero-about">
+        <div className="hero-about">
           <TextType
             text={[
               "Third-year Bachelor of Computing student in Computer Science at the University of Guelph, graduating the Summer of 2027",
@@ -475,7 +491,7 @@ function HomeSection() {
             cursorCharacter="_"
             loop={true}
           />
-        </p>
+        </div>
         <div className="hero-links">
           <a className="pf-btn pf-btn-primary" href="https://github.com/chaos-hunter" target="_blank" rel="noreferrer">
             ⬡ GitHub
