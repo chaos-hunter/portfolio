@@ -791,7 +791,7 @@ function HobbiesSection() {
           scrollEase={0.05}
         />
       </div>
-      <PSNStats />
+     {/*<PSNStats />*/}
     </section>
   );
 }
