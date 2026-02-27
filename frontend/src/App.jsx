@@ -795,6 +795,7 @@ function HobbiesSection() {
     </section>
   );
 }
+/*
 function PSNStats() {
   const [profile, setProfile] = useState(null);
   const [trophies, setTrophies] = useState(null);
@@ -822,7 +823,7 @@ function PSNStats() {
     <div style={{ marginTop: "3rem" }}>
       <p className="section-sub">PlayStation Stats</p>
 
-      {/* Profile Header */}
+      {Profile Header }
       <div className="pf-card" style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "1.5rem" }}>
         <div style={{
           width: 60, height: 60, borderRadius: "50%",
@@ -840,7 +841,7 @@ function PSNStats() {
         </div>
       </div>
 
-      {/* Trophy Summary */}
+      {Trophy Summary }
       {trophies && (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: "1rem", marginBottom: "1.5rem" }}>
           {[
@@ -860,7 +861,7 @@ function PSNStats() {
         </div>
       )}
 
-      {/* Recently Played */}
+      { Recently Played }
       {games?.recentlyPlayedTitles?.length > 0 && (
         <>
           <p style={{ color: "var(--accent2)", fontWeight: 600, fontSize: "0.85rem", marginBottom: "1rem" }}>
@@ -883,6 +884,7 @@ function PSNStats() {
     </div>
   );
 }
+      */
 // ---- ROOT ----
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("Home");
