@@ -448,14 +448,14 @@ const projects = [
   {
     title: "Neurolink Tutor",
     url: "https://neurolink-tutor.vercel.app/",
-    desc: "An AI-powered adaptive learning platform that personalizes education in real-time. Built with React and Flask, uses Google Gemini AI to generate context-aware lesson content tailored to each student's mastery level.",
+    desc: "Neuralinq ITS is a full-stack intelligent tutoring system built with React and Flask that uses Google Gemini AI to dynamically generate personalized lessons, questions, and practice sets tailored to each student's mastery level. It features an adaptive learning algorithm that tracks student performance across skills and adjusts content difficulty in real time, alongside an admin panel for content management, AI-generated materials, and progress analytics.",
     tags: ["React", "Flask", "Gemini AI"]
   },
   {
-    title: "Rogue-Like Game",
-    url: "https://chaos-hunter.github.io/Web-roguegame/",
-    desc: "A browser-based roguelike dungeon crawler with procedurally generated dungeons, strategic turn-based combat, and a progression system. Built with TypeScript, Phaser 3, and Vite.",
-    tags: ["TypeScript", "Phaser 3", "Vite"]
+    title: "E-Commerce-Analytics-Dashboard",
+    url: "https://github.com/chaos-hunter/E-Commerce-Analytics-Dashboard",
+    desc: "Developed a full-stack e-commerce analytics platform using Spring Boot, React/TypeScript, and MariaDB that ingests and cleans raw retail transaction data, performs RFM analysis, and visualizes customer segments through an interactive scatter plot and histograms with dynamic filtering and .xlsx export",
+    tags: ["Java", "Spring Boot", "React", "TypeScript", "MariaDB", "Docker"]
   },
   {
     title: "Finance Manager",
