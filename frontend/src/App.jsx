@@ -440,10 +440,10 @@ const projects = [
     tags: ["Python", "Django", "API"]
   },
   {
-    title: "Weather & News App",
-    url: "https://weather-and-news-website.vercel.app/",
-    desc: "Combines real-time weather forecasts and relevant news based on user searches. Uses a Flask backend with third-party APIs and a React frontend with a glassmorphism design.",
-    tags: ["React", "Flask", "API"]
+    title: "Reminder+
+    url: "https://github.com/chaos-hunter/Reminder-",
+    desc: "Reminder+ is a Flutter habit-tracking app that combines time-based and location-based reminders with a journaling feature. Users get notified when they arrive at specific places rather than just at set times, and can log dated journal entries to support daily self-improvement.",
+    tags: ["Flutter", "Dart", "Mobile"]
   },
   {
     title: "Neurolink Tutor",
