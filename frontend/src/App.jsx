@@ -428,18 +428,6 @@ const certificates = [
 ];
 const projects = [
   {
-    title: "Investor Simulation",
-    url: "https://e-portfolio-simulation.vercel.app/",
-    desc: "A Next.js 15 web app bridging market tracking and wealth projection. Features a real-time dashboard powered by the Yahoo Finance API, paper-trading wallet, and a custom projection engine that visualizes long-term compound growth.",
-    tags: ["Next.js", "Yahoo Finance API"]
-  },
-  {
-    title: "Currency Calculator",
-    url: "https://currency-converter-0wq4.onrender.com/",
-    desc: "Built with Python/Django and HTML, this calculator uses an exchange rate API to convert between currencies. Hosted on the cloud and accessible via the link.",
-    tags: ["Python", "Django", "API"]
-  },
-  {
     title: "Reminder+",
     url: "https://github.com/chaos-hunter/Reminder-",
     desc: "Reminder+ is a Flutter habit-tracking app that combines time-based and location-based reminders with a journaling feature. Users get notified when they arrive at specific places rather than just at set times, and can log dated journal entries to support daily self-improvement.",
@@ -459,10 +447,22 @@ const projects = [
   },
   {
     title: "Finance Manager",
-    url: "https://github.com/chaos-hunter/Finance-manager",
-    desc: "A Django app using SQLite to store financial transactions. Features user authentication, email verification, password reset, and the ability to print financial statements.",
+    url: "https://davidentonu.pythonanywhere.com/",
+    desc: "Developed a full-stack personal finance management application using Django, Python, and SQLite that features secure user authentication and email-based password reset capabilities. The platform enables users to create custom categorical budget wallets, record granular transactional data, and automatically calculates real-time remaining balances and expenditure totals using robust backend data models.",
     tags: ["Python", "Django", "SQLite"]
   }
+  {
+    title: "Investor Simulation",
+    url: "https://e-portfolio-simulation.vercel.app/",
+    desc: "A Next.js 15 web app bridging market tracking and wealth projection. Features a real-time dashboard powered by the Yahoo Finance API, paper-trading wallet, and a custom projection engine that visualizes long-term compound growth.",
+    tags: ["Next.js", "Yahoo Finance API"]
+  },
+  {
+    title: "Currency Calculator",
+    url: "https://currency-converter-0wq4.onrender.com/",
+    desc: "Built with Python/Django and HTML, this calculator uses an exchange rate API to convert between currencies. Hosted on the cloud and accessible via the link.",
+    tags: ["Python", "Django", "API"]
+  },
 ];
 
 // ---- COMPONENTS ----
