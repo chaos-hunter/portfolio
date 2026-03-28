@@ -440,7 +440,7 @@ const projects = [
     tags: ["Python", "Django", "API"]
   },
   {
-    title: "Reminder+
+    title: "Reminder+",
     url: "https://github.com/chaos-hunter/Reminder-",
     desc: "Reminder+ is a Flutter habit-tracking app that combines time-based and location-based reminders with a journaling feature. Users get notified when they arrive at specific places rather than just at set times, and can log dated journal entries to support daily self-improvement.",
     tags: ["Flutter", "Dart", "Mobile"]
