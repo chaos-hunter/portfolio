@@ -459,7 +459,7 @@ const projects = [
   },
   {
     title: "Finance Manager",
-    url: "https://davidentonu.pythonanywhere.com/",
+    url: "https://github.com/chaos-hunter/Finance-manager",
     desc: "A Django app using SQLite to store financial transactions. Features user authentication, email verification, password reset, and the ability to print financial statements.",
     tags: ["Python", "Django", "SQLite"]
   }
