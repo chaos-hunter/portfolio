@@ -428,40 +428,37 @@ const certificates = [
 ];
 const projects = [
   {
-    title: "Reminder+",
-    url: "https://github.com/chaos-hunter/Reminder-",
-    desc: "Reminder+ is a Flutter habit-tracking app that combines time-based and location-based reminders with a journaling feature. Users get notified when they arrive at specific places rather than just at set times, and can log dated journal entries to support daily self-improvement.",
-    tags: ["Flutter", "Dart", "Mobile"]
+    title: "E-Commerce-Analytics-Dashboard",
+    url: "https://github.com/chaos-hunter/E-Commerce-Analytics-Dashboard",
+    desc: "Developed a full-stack e-commerce analytics platform using Spring Boot, React/TypeScript, and MariaDB that ingests and cleans raw retail transaction data, performs RFM analysis, and visualizes customer segments through an interactive scatter plot and histograms with dynamic filtering and .xlsx export",
+    tags: ["Java", "Spring Boot", "React", "TypeScript", "MariaDB", "Docker"]
   },
+
   {
     title: "Neurolink Tutor",
     url: "https://neurolink-tutor.vercel.app/",
     desc: "Neuralinq ITS is a full-stack intelligent tutoring system built with React and Flask that uses Google Gemini AI to dynamically generate personalized lessons, questions, and practice sets tailored to each student's mastery level. It features an adaptive learning algorithm that tracks student performance across skills and adjusts content difficulty in real time, alongside an admin panel for content management, AI-generated materials, and progress analytics.",
     tags: ["React", "Flask", "Gemini AI"]
   },
+  
   {
-    title: "E-Commerce-Analytics-Dashboard",
-    url: "https://github.com/chaos-hunter/E-Commerce-Analytics-Dashboard",
-    desc: "Developed a full-stack e-commerce analytics platform using Spring Boot, React/TypeScript, and MariaDB that ingests and cleans raw retail transaction data, performs RFM analysis, and visualizes customer segments through an interactive scatter plot and histograms with dynamic filtering and .xlsx export",
-    tags: ["Java", "Spring Boot", "React", "TypeScript", "MariaDB", "Docker"]
+    title: "Reminder+",
+    url: "https://github.com/chaos-hunter/Reminder-",
+    desc: "Reminder+ is a Flutter habit-tracking app that combines time-based and location-based reminders with a journaling feature. Users get notified when they arrive at specific places rather than just at set times, and can log dated journal entries to support daily self-improvement.",
+    tags: ["Flutter", "Dart", "Mobile"]
   },
+  
   {
     title: "Finance Manager",
     url: "https://davidentonu.pythonanywhere.com/",
     desc: "Developed a full-stack personal finance management application using Django, Python, and SQLite that features secure user authentication and email-based password reset capabilities. The platform enables users to create custom categorical budget wallets, record granular transactional data, and automatically calculates real-time remaining balances and expenditure totals using robust backend data models.",
     tags: ["Python", "Django", "SQLite"]
-  }
+  },
   {
     title: "Investor Simulation",
     url: "https://e-portfolio-simulation.vercel.app/",
     desc: "A Next.js 15 web app bridging market tracking and wealth projection. Features a real-time dashboard powered by the Yahoo Finance API, paper-trading wallet, and a custom projection engine that visualizes long-term compound growth.",
     tags: ["Next.js", "Yahoo Finance API"]
-  },
-  {
-    title: "Currency Calculator",
-    url: "https://currency-converter-0wq4.onrender.com/",
-    desc: "Built with Python/Django and HTML, this calculator uses an exchange rate API to convert between currencies. Hosted on the cloud and accessible via the link.",
-    tags: ["Python", "Django", "API"]
   },
 ];
 
