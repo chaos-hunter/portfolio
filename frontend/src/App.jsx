@@ -450,7 +450,7 @@ const projects = [
   
   {
     title: "Finance Manager",
-    url: "https://davidentonu.pythonanywhere.com/",
+    url: "https://github.com/chaos-hunter/Finance-manager",
     desc: "Developed a full-stack personal finance management application using Django, Python, and SQLite that features secure user authentication and email-based password reset capabilities. The platform enables users to create custom categorical budget wallets, record granular transactional data, and automatically calculates real-time remaining balances and expenditure totals using robust backend data models.",
     tags: ["Python", "Django", "SQLite"]
   },
