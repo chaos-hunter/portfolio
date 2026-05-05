@@ -456,9 +456,9 @@ const projects = [
   },
   {
     title: "Investor Simulation",
-    url: "https://e-portfolio-simulation.vercel.app/",
-    desc: "A Next.js 15 web app bridging market tracking and wealth projection. Features a real-time dashboard powered by the Yahoo Finance API, paper-trading wallet, and a custom projection engine that visualizes long-term compound growth.",
-    tags: ["Next.js", "Yahoo Finance API"]
+    url: "https://github.com/chaos-hunter/Portfolio-simulation-flutter-app",
+    desc: "ProInvestor is a cross-platform real-time stock simulation and wealth projection application. Originally developed as a web app, it has been completely rebuilt using Flutter to provide a seamless, native experience across Windows laptops and Android/iOS smartphones. It allows users to track live stock prices, simulate paper trading with a virtual wallet, and project future investment growth over time.",
+    tags: ["Flutter", "Yahoo Finance API", "Mobile"]
   },
 ];
 
