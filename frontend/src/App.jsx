@@ -477,7 +477,7 @@ function HomeSection() {
         <div className="hero-about">
           <TextType
             text={[
-              "Third-year Bachelor of Computing student in Computer Science at the University of Guelph, graduating the Summer of 2027",
+              "Fourth-year Bachelor of Computing student in Computer Science at the University of Guelph, graduating the Summer of 2027",
               "Passionate about the fields of Cloud devlopment, Data analytics, and Software Development",
               " Strong foundation in data structures, algorithms, and object-oriented programming through coursework and hands-on projects in Python, Java, and C"
             ]}
