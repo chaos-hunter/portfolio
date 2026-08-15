@@ -3,7 +3,7 @@ import CircularGallery from "./CircularGallery";
 import TextType from "./TextType";
 import LogoLoop from "./LogoLoop";
 
-const NAV_LINKS = ["Home", "Resume", "Projects", "Contact", "Hobbies"];
+const NAV_LINKS = ["Home", "Resume", "Projects", "Contact"/*, "Hobbies"*/];
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
