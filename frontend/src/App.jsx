@@ -612,7 +612,7 @@ function ResumeSection() {
           />
         </div>
 
-      <p className="section-sub">Certificates</p>
+      {/* <p className="section-sub">Certificates</p>
       {certificates.map((c, i) => (
         <div className="cert-card" key={i}>
           <div className="cert-dot" />
@@ -621,7 +621,8 @@ function ResumeSection() {
             <div className="cert-detail">{c.detail}</div>
           </div>
         </div>
-      ))}
+      ))} */}
+
     </section>
   );
 }
