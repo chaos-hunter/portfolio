@@ -364,6 +364,13 @@ const styles = `
 // ---- DATA ----
 const experience = [
   {
+    date: "May 2026 – August 2026",
+    title: "Quality Assurance Tester",
+    org: "OnlyMe · Toronto, ON",
+    desc: "Volunteered as a QA Tester for OnlyMe, an early-stage tech startup. In this role I tested the application across core features and identifyed any bugs and usability issues before release. Documented findings and reported them directly to the founding team. Proposed specific improvements based on hands-on user experience testing, contributing to product refinement during the company's early development stage."
+  },
+  
+  {
     date: "April 2025 – Present",
     title: "Event Staff",
     org: "University of Guelph · Guelph, ON",
