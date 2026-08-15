@@ -409,19 +409,35 @@ const education = [
   }
 ];
 
-const skillItems = [
-  { label: "Data Structures & Algorithms", sub: "C" },
-  { label: "Web Development", sub: "HTML, CSS, React, Next.js" },
-  { label: "Software Testing", sub: "Frontend & Backend" },
-  { label: "Software Development", sub: "Java, Python, Dart" },
-  { label: "Databases & SQL", sub: null },
-  { label: "Technical Communication", sub: null },
-  { label: "Team Collaboration", sub: null },
-  { label: "Customer Service", sub: null },
-  { label: "Problem Solving", sub: null },
-  { label: "Time Management", sub: null },
-  { label: "Microsoft Office", sub: null },
+const technicalSkills = [
+  { label: "Java", sub: "Language" },
+  { label: "Python", sub: "Language" },
+  { label: "C", sub: "Language" },
+  { label: "SQL", sub: "MySQL, PostgreSQL" },
+  { label: "JavaScript", sub: "Language" },
+  { label: "HTML/CSS", sub: "Language" },
+  { label: "Dart", sub: "Language" },
+  { label: "React", sub: "Framework" },
+  { label: "Node.js", sub: "Framework" },
+  { label: "Flask", sub: "Framework" },
+  { label: "JUnit", sub: "Framework" },
+  { label: "Flutter", sub: "Framework" },
+  { label: "FastAPI", sub: "Framework" },
+  { label: "Git", sub: "Dev Tool" },
+  { label: "Docker", sub: "Dev Tool" },
+  { label: "VS Code", sub: "Dev Tool" },
+  { label: "Visual Studio", sub: "Dev Tool" },
+  { label: "PyCharm", sub: "Dev Tool" },
+  { label: "Eclipse", sub: "Dev Tool" },
 ];
+
+const professionalSkills = [
+  { label: "Team Management", sub: null },
+  { label: "Microsoft Office", sub: null },
+  { label: "Customer Service", sub: null },
+  { label: "Technical & Verbal Communication", sub: null },
+];
+
 
 const certificates = [
   {
@@ -568,7 +584,7 @@ function ResumeSection() {
                   borderRadius: "6px", padding: "0.2rem 0.6rem",
                   fontSize: "0.78rem", color: "var(--accent2)"
                 }}>
-                  🏆 {a}
+                   {a}
                 </span>
               ))}
             </div>
@@ -576,41 +592,72 @@ function ResumeSection() {
         </div>
       ))}
 
-      <p className="section-sub">Skills</p>
-        <div style={{ padding: "1rem 0 2rem" }}>
-          <LogoLoop
-            logos={skillItems.map(s => ({ node: s }))}
-            speed={60}
-            direction="left"
-            gap={12}
-            pauseOnHover={true}
-            fadeOut={true}
-            fadeOutColor="#0a0a0f"
-            renderItem={(item) => (
-              <div style={{
-                background: "var(--card)",
-                border: "1px solid var(--border)",
-                borderRadius: "10px",
-                padding: "0.6rem 1.1rem",
-                whiteSpace: "nowrap",
-                transition: "border-color 0.2s",
-                cursor: "default",
-              }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = "rgba(124,108,255,0.5)"}
-                onMouseLeave={e => e.currentTarget.style.borderColor = "var(--border)"}
-              >
-                <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "var(--text)" }}>
-                  {item.node.label}
-                </div>
-                {item.node.sub && (
-                  <div style={{ fontSize: "0.75rem", color: "var(--accent)", marginTop: "0.15rem" }}>
-                    {item.node.sub}
-                  </div>
-                )}
+         <p className="section-sub">Technical Skills</p>
+      <div style={{ padding: "1rem 0 2rem" }}>
+        <LogoLoop
+          logos={technicalSkills.map(s => ({ node: s }))}
+          speed={60}
+          direction="left"
+          gap={12}
+          pauseOnHover={true}
+          fadeOut={true}
+          fadeOutColor="#0a0a0f"
+          renderItem={(item) => (
+            <div style={{
+              background: "var(--card)",
+              border: "1px solid var(--border)",
+              borderRadius: "10px",
+              padding: "0.6rem 1.1rem",
+              whiteSpace: "nowrap",
+              transition: "border-color 0.2s",
+              cursor: "default",
+            }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = "rgba(124,108,255,0.5)"}
+              onMouseLeave={e => e.currentTarget.style.borderColor = "var(--border)"}
+            >
+              <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "var(--text)" }}>
+                {item.node.label}
               </div>
-            )}
-          />
-        </div>
+              {item.node.sub && (
+                <div style={{ fontSize: "0.75rem", color: "var(--accent)", marginTop: "0.15rem" }}>
+                  {item.node.sub}
+                </div>
+              )}
+            </div>
+          )}
+        />
+      </div>
+
+      <p className="section-sub">Professional Skills</p>
+      <div style={{ padding: "1rem 0 2rem" }}>
+        <LogoLoop
+          logos={professionalSkills.map(s => ({ node: s }))}
+          speed={60}
+          direction="right"
+          gap={12}
+          pauseOnHover={true}
+          fadeOut={true}
+          fadeOutColor="#0a0a0f"
+          renderItem={(item) => (
+            <div style={{
+              background: "rgba(255,108,157,0.08)",
+              border: "1px solid rgba(255,108,157,0.2)",
+              borderRadius: "10px",
+              padding: "0.6rem 1.1rem",
+              whiteSpace: "nowrap",
+              transition: "border-color 0.2s",
+              cursor: "default",
+            }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = "var(--accent2)"}
+              onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,108,157,0.2)"}
+            >
+              <div style={{ fontSize: "0.88rem", fontWeight: 600, color: "var(--accent2)" }}>
+                {item.node.label}
+              </div>
+            </div>
+          )}
+        />
+      </div>
 
       {/* <p className="section-sub">Certificates</p>
       {certificates.map((c, i) => (
