@@ -398,7 +398,7 @@ const education = [
       "Software Engineering",
       "Web Development & Design"
     ],
-    awards: ["Dean's Honours List — Fall 2025"]
+    awards: ["Dean's Honours List — Fall 2025, Winter 2026"]
   }
 ];
 
