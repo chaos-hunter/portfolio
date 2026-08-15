@@ -429,6 +429,8 @@ const technicalSkills = [
   { label: "Visual Studio", sub: "Dev Tool" },
   { label: "PyCharm", sub: "Dev Tool" },
   { label: "Eclipse", sub: "Dev Tool" },
+  { label: "Web Development", sub: "HTML, CSS, React, Next.js" },
+  { label: "Databases & SQL", sub: null },
 ];
 
 const professionalSkills = [
@@ -436,8 +438,9 @@ const professionalSkills = [
   { label: "Microsoft Office", sub: null },
   { label: "Customer Service", sub: null },
   { label: "Technical & Verbal Communication", sub: null },
+  { label: "Problem Solving", sub: null },
+  { label: "Time Management", sub: null },
 ];
-
 
 const certificates = [
   {
