@@ -939,7 +939,7 @@ export default function Portfolio() {
         <ResumeSection />
         <ProjectsSection />
         <ContactSection />
-        <HobbiesSection />
+        {/* <HobbiesSection /> */}
 
         <footer className="pf-footer">
           <span>© 2025 David Entonu</span>
