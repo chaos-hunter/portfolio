@@ -775,11 +775,11 @@ function ContactSection() {
           <strong>GitHub</strong>
 
         </a>
-        <a className="contact-card" href="https://discord.com/users/1001158517329231912" target="_blank" rel="noreferrer">
+    {/* <a className="contact-card" href="https://discord.com/users/1001158517329231912" target="_blank" rel="noreferrer">
           <span className="contact-icon">🎮</span>
           <strong>Discord</strong>
 
-        </a>
+        </a> */}
       </div>
 
       <div className="contact-form">
